@@ -9,14 +9,6 @@
               <?php echo get_the_date(); ?>
             </time>
           </div>
-        <?php if( has_category() ): ?>
-          <div class="article-category">
-            <?php echo get_the_category_list( ',' ); ?>
-          </div>
-        <?php endif; ?>
-        <div class="artile-tag">
-          <?php the_tags( '<ul><li>','</li><li>','</li></ul>' ); ?>
-        </div>
         </div>
         <?php if ( has_post_thumbnail() ): ?>
           <div class="article-thumbnail">
@@ -26,8 +18,6 @@
         <h1><?php the_title(); ?></h1>
         <?php the_content(); ?>
       </article>
-      <?php previous_post_link(); ?>
-      <?php next_post_link(); ?>
     <?php endif; ?>
   </div>
 </div>
