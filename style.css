@@ -1,0 +1,36 @@
+/*
+Theme_name: Pips
+Them URI:http://www.hogepon.com/
+Description: Enterprise wordpress theme
+Author: Keshiyan
+Version: 1.0
+Lisence: General Public License v2 or later
+Lisence URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+body {
+  font-family: 'Noto Sans JP', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Noto Sans Japanese', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header-inner, .container, .footer-inner {
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  max-width: 1800px;
+}
