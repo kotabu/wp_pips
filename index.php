@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 <div class="container">
-  <?php echo get_theme_mod( 'main_color', 'default' ); ?>
-  <?php echo get_theme_mod( 'link_color', 'default' ); ?>
   <div class="contents">
     <?php if(is_category() || is_tag()): ?>
       <h1><?php single_cat_title(); ?>の記事一覧</h1>
@@ -12,7 +10,9 @@
     <?php elseif(is_month()): ?>
       <h1><?php the_time("Y年m月"); ?>の記事一覧</h1>
     <?php endif; ?>
-    <?php if(have_posts()): while(have_posts()): the_post(); ?>
+    <?php if(have_posts()): ?>
+    <div class="article-container">
+    <?php while(have_posts()): the_post(); ?>
       <article <?php post_class( 'article-list' ) ?>>
         <a href="<?php the_permalink(); ?>">
           <?php if ( has_post_thumbnail() ) : ?>
@@ -29,7 +29,7 @@
             </span>
             <?php if( !is_category() ): ?>
               <?php if( has_category() ): ?>
-              <span class="artcile-category">
+              <span class="article-category">
                 <?php $postcat=get_the_category(); echo $postcat[0]->name; ?>
               </span>
               <?php endif; ?>
@@ -38,10 +38,14 @@
         </a>
       </article>
     <?php endwhile; ?>
+    </div>
       <?php if (function_exists( 'pagination' )): ?>
+      <div class="pagination-container">
         <?php pagination( $wp_query->max_num_pages, get_query_var( 'paged' )); ?>
+      </div>
       <?php endif; ?>
     <?php endif; ?>
   </div>
 </div>
+<?php get_template_part( 'under-contents' ); ?>
 <?php get_footer(); ?>
