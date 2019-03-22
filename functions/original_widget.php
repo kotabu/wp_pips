@@ -16,7 +16,7 @@ class ProfileWidgetItem extends WP_widget {
     $dest_img = !empty($instance['setting_img']) ? $instance['setting_img'] : "";
     $dest_textarea = !empty($instance['setting_textarea']) ? $instance['setting_textarea'] : "";
 
-    echo '<div id="fixed-widget">'.$args['before_widget'];
+    echo '<div id="profile-widget">'.$args['before_widget'];
     echo $args['before_title'].$dest_title.$args['after_title'];
     echo '<a href="'.$dest_url.'"><img src="'.$dest_img.'" align="middle"/></a><p>'.$dest_textarea.'</p>';
     echo $args['after_widget'].'</div>';

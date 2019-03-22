@@ -15,22 +15,24 @@
     <?php while(have_posts()): the_post(); ?>
       <article <?php post_class( 'article-list' ) ?>>
         <a href="<?php the_permalink(); ?>">
+          <div class="img-gradation">
           <?php if ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'large' ); ?>
           <?php else : ?>
             <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
           <?php endif ; ?>
+          </div>
           <div class="article-info">
             <h2><?php the_title(); ?></h2>
             <span class="article-date">
               <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                <?php echo get_the_date(); ?>
+                DATE:<?php echo get_the_date(); ?>
               </time>
             </span>
             <?php if( !is_category() ): ?>
               <?php if( has_category() ): ?>
               <span class="article-category">
-                <?php $postcat=get_the_category(); echo $postcat[0]->name; ?>
+                CATEGORY:<?php $postcat=get_the_category(); echo $postcat[0]->name; ?>
               </span>
               <?php endif; ?>
             <?php endif; ?>

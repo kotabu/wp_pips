@@ -6,16 +6,16 @@
         <div class="article-info">
           <div class="article-date">
             <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-              <?php echo get_the_date(); ?>
+              DATE : <?php echo get_the_date(); ?> /
             </time>
           </div>
         <?php if( has_category() ): ?>
           <div class="article-category">
-            <?php echo get_the_category_list( ',' ); ?>
+            CATEGORY : <?php echo get_the_category_list( ' , ' ); ?> / 
           </div>
         <?php endif; ?>
-        <div class="artile-tag">
-          <?php the_tags( '<ul><li>','</li><li>','</li></ul>' ); ?>
+        <div class="article-tag">
+          TAG : <?php the_tags( '',' , ','' ); ?>
         </div>
         </div>
         <?php if ( has_post_thumbnail() ): ?>
@@ -26,8 +26,14 @@
         <h1><?php the_title(); ?></h1>
         <?php the_content(); ?>
       </article>
-      <?php previous_post_link(); ?>
-      <?php next_post_link(); ?>
+      <div class="link-container">
+        <span class="prev-link">
+          <?php previous_post_link('%link'); ?>
+        </span>
+        <span class="next-link">
+          <?php next_post_link('%link'); ?>
+        </span>
+      </div>
     <?php endif; ?>
   </div>
 </div>

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -18,7 +19,7 @@
     <div class="header-button">
       <?php get_template_part( 'sns-button' ); ?>
     </div>
-    <div class="menubutton main_color"><span class="menu-name">MENU</span>
+    <div class="menubutton"><span class="menu-name">MENU</span>
       <?php wp_nav_menu(array(
         'theme_location' => 'header-nav',
         'container' => 'nav',
@@ -28,7 +29,7 @@
       ) ); ?>
     </div>
   </div>
-  <div class="searchbutton main_color">
+  <div class="searchbutton">
     SEARCH
     <div class="searchform"><?php get_search_form(); ?></div>
   </div>
