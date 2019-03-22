@@ -5,7 +5,7 @@
     <a href="<?php the_permalink(); ?>">
       <div class="img-gradation">
       <?php if ( has_post_thumbnail() ) : ?>
-        <?php the_post_thumbnail( 'large' ); ?>
+        <?php the_post_thumbnail( 'medium' ); ?>
       <?php else : ?>
         <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
       <?php endif ; ?>

@@ -20,7 +20,8 @@
     <div class="header-button">
       <?php get_template_part( 'sns-button' ); ?>
     </div>
-    <div class="menubutton"><span class="menu-name">MENU</span>
+    <div class="menubutton">
+    <img class="menu-img" src="<?php echo get_template_directory_uri(); ?>/images/menu.svg">
       <?php wp_nav_menu(array(
         'theme_location' => 'header-nav',
         'container' => 'nav',
@@ -31,7 +32,7 @@
     </div>
   </div>
   <div class="searchbutton">
-    SEARCH
+    <img class="menu-img" src="<?php echo get_template_directory_uri(); ?>/images/image_search.svg">
     <div class="searchform"><?php get_search_form(); ?></div>
   </div>
 </header>
