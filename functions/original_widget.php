@@ -4,7 +4,7 @@ class ProfileWidgetItem extends WP_widget {
   function __construct() {
     parent::__construct(
       'profile_widget_id001',
-      'プロフィール',
+      '[Pips]プロフィール',
       array( 'description' => '自身のプロフィールを表示します' )
     );
   }

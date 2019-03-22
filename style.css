@@ -91,7 +91,7 @@ a:hover {
 
 /*-- site-title --*/
 
-.site-title, .description, .menu-name, .searchbutton {
+.site-title, .description {
   font-family: 'Satisfy', cursive;
 }
 
@@ -290,12 +290,24 @@ a:hover {
   animation: show 0.5s linear 0s;
 }
 
+/*-- front-page --*/
+
+.front-subtitle {
+  font-size: 3em;
+  margin: 40px 0px;
+  text-align: center;
+}
+
 /*-- index --*/
 
 .contents>h1 {
   font-size: 3em;
   text-align: center;
-  margin: 50px 0px;;
+  margin: 50px 0px;
+}
+
+.article-container {
+  margin-bottom: 50px;
 }
 
 .article-list {
@@ -377,6 +389,7 @@ a:hover {
 }
 
 .article h1 {
+  text-align: center;
   font-size: 4em;
   margin: 10px 60px 100px 10px;
 }
@@ -410,6 +423,7 @@ a:hover {
 
 .article p {
   font-size: 1em;
+  margin: 5px 20px;
 }
 
 .article img {
@@ -569,7 +583,7 @@ input[type="submit"]:hover {
 
 .pagination {
   display: inline-block;
-  margin: 50px 0px;
+  margin: 10px 0px;
   padding: 10px 30px;
 }
 
@@ -607,6 +621,7 @@ input[type="submit"]:hover {
 /*-- under-contents --*/
 
 .under-contents {
+  margin-top: 50px;
   padding: 60px 0px;
   background-color: #e9e9e9;
 }
@@ -640,6 +655,7 @@ input[type="submit"]:hover {
   font-size: 0.95em;
   opacity: 0.9;
   margin-top: 50px;
+  padding: 0 10px;
 }
 
 /*-- footer --*/
@@ -750,6 +766,26 @@ input[type="submit"]:hover {
 
   .footer-widget {
     width: 100%;
+  }
+
+  .article {
+    font-size: 90%;
+  }
+
+  .article p {
+    font-size: 105%;
+  }
+
+  .article .article-info {
+    font-size: 120%;
+  }
+
+  #comment-area {
+    font-size: 90%;
+  }
+
+  .link-container {
+    font-size: 90%;
   }
 
 }

@@ -40,3 +40,4 @@
 </div>
 <?php get_template_part( 'under-contents' ); ?>
 <?php get_footer(); ?>
+<?php setPostViews(get_the_ID()); ?>

@@ -10,6 +10,7 @@ get_template_part('functions/original_widget');
 get_template_part('functions/original_menu');
 get_template_part('functions/get_image');
 get_template_part('functions/pagination');
+get_template_part('functions/view_count');
 
 function widgetarea_init() {
   register_sidebar(array( 
