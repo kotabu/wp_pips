@@ -1,5 +1,35 @@
 <?php
 
+
+function meta_setting_customize_resister($wp_customize) {
+  $wp_customize->add_section( 'meta_setting', array(
+    'title' => 'meta設定',
+    'priority' => '10',
+  ) );
+
+  $wp_customize->add_setting( 'twitter-id' , array(
+    'type' => 'option',
+  ) );
+  $wp_customize->add_setting( 'meta-img' , array(
+    'type' => 'option',
+  ) );
+
+ $wp_customize->add_control ( 'twitter-id' , array(
+    'settings' => 'twitter-id',
+    'label' => 'Twitterのid（例：@keshiyan1）',
+    'section' => 'meta_setting',
+    'type' => 'text',
+  ) );
+if( class_exists('WP_Customize_Image_Control') ):
+  $wp_customize->add_control ( new WP_Customize_Image_Control( $wp_customize, 'meta-img', array(
+    'settings' => 'meta-img',
+    'label' => 'meta情報に送信する画像（設定しない場合は、サイトアイコンが使用されます）',
+    'section' => 'meta_setting',
+  ) ));
+endif;
+}
+add_action( 'customize_register' , 'meta_setting_customize_resister' );
+
 function main_color_theme_customize_resister($wp_customize) {
   $wp_customize->add_section( 'main_setting', array(
     'title' => '色設定',
