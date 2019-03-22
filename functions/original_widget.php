@@ -1,4 +1,58 @@
-<?php 
+<?php
+
+class TwitterWidgetItem extends WP_widget {
+
+  function __construct() {
+    parent::__construct(
+      'twitter_widget_id001',
+      '[Pips]ツイッタータイムライン',
+      array( 'description' => 'Twitterのタイムラインを表示します' )
+    );
+  }
+
+  public function widget($args, $instance) {
+
+    $dest_title = !empty($instance['setting_title']) ? $instance['setting_title'] : "";
+    $dest_twitter_id = !empty($instance['setting_twitter_id']) ? $instance['setting_twitter_id'] : "";
+
+    echo '<div id="twitter-widget">'.$args['before_widget'];
+    echo $args['before_title'].$dest_title.$args['after_title'];
+    echo '<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/'.$dest_twitter_id.'?ref_src=twsrc%5Etfw">Tweets by '.$dest_twitter_id.'</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+    echo $args['after_widget'].'</div>';
+
+  }
+
+  public function form($instance) {
+
+    $dest_title = !empty($instance['setting_title']) ? $instance['setting_title'] : "";
+    $dest_twitter_id = !empty($instance['setting_twitter_id']) ? $instance['setting_twitter_id'] : "";
+?>
+    <p>
+      <label for="<?php echo $this->get_field_id('setting_title'); ?>">タイトル</label><br>
+      <input id="<?php echo $this->get_field_id('setting_title'); ?>" name="<?php echo $this->get_field_name('setting_title'); ?>" type="text" value="<?php echo esc_attr($dest_title); ?>">
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('setting_twitter_id'); ?>">TwitterのID（@を抜いたもの）</label><br>@
+      <input id="<?php echo $this->get_field_id('setting_twitter_id'); ?>" name="<?php echo $this->get_field_name('setting_twitter_id'); ?>" type="text" value="<?php echo $dest_twitter_id; ?>">
+    </p>
+<?php
+
+  }
+
+  public function update($new_instance, $old_instance) {
+
+    $instance = array();
+    $instance['setting_title'] = !empty($new_instance['setting_title']) ? $new_instance['setting_title'] : "";
+    $instance['setting_twitter_id'] = !empty($new_instance['setting_twitter_id']) ? $new_instance['setting_twitter_id'] : "";
+
+    return $instance;
+  }
+
+}
+
+add_action( 'widgets_init', function(){ register_widget('TwitterWidgetItem'); } );
+
+
 class ProfileWidgetItem extends WP_widget {
 
   function __construct() {

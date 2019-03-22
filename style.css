@@ -91,7 +91,7 @@ a:hover {
 
 /*-- site-title --*/
 
-.site-title, .description {
+.site-title, .description, .front-subtitle {
   font-family: 'Satisfy', cursive;
 }
 
@@ -321,10 +321,12 @@ a:hover {
 
 .article-list .article-info {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0px;
+  left: 0px;
   opacity: 0;
   transition: 0.7s all;
+  overflow: hidden;
+  padding: 10px;
 } 
 
 .article-list a {
@@ -381,8 +383,9 @@ a:hover {
 }
 
 .article .article-info {
-  font-size: 0.9em;
+  font-size: 1.1em;
   opacity: 0.9;
+  text-align: center;
 } 
 
 .article .article-date, .article .article-category, .article .article-tag {
@@ -396,7 +399,7 @@ a:hover {
 .article h1 {
   text-align: center;
   font-size: 4em;
-  margin: 10px 60px 100px 10px;
+  margin: 70px 0px 100px 0px;
 }
 
 .article h2 {
@@ -428,7 +431,7 @@ a:hover {
 
 .article p {
   font-size: 1em;
-  margin: 5px 20px;
+  margin: 10px 20px;
 }
 
 .article img {
@@ -543,7 +546,7 @@ input[type="submit"]:hover {
 
 .prev-link, .next-link {
   position: relative;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 .prev-link {
@@ -629,6 +632,12 @@ input[type="submit"]:hover {
   margin-top: 50px;
   padding: 60px 0px;
   background-color: #e9e9e9;
+  text-align: center;
+}
+
+.under-contents h4 {
+  font-size: 2em;
+  padding: 20px 0px;
 }
 
 /*-- profile --*/
@@ -643,11 +652,6 @@ input[type="submit"]:hover {
   width: 125px;
   height: 125px;
   object-fit: cover;
-}
-
-#profile-widget h4 {
-  font-size: 2em;
-  padding: 20px 0px;
 }
 
 #profile-widget .name {
@@ -730,6 +734,16 @@ input[type="submit"]:hover {
     height: 180px;
     object-fit: cover;
   }
+
+  .article-list h2 {
+    font-size: 1.3em;
+  }
+
+  .article-list .article-date, .article-list .article-category {
+    font-size: 0.85em;
+    opacity: 0.8;
+  }
+
 }
 
 @media (min-width: 1080px) {
@@ -745,6 +759,14 @@ input[type="submit"]:hover {
     object-fit: cover;
   }
 
+  .article-list h2 {
+    font-size: 1.6em;
+  }
+
+  .article-list .article-date, .article-list .article-category {
+    font-size: 0.9em;
+  }
+
 }
 
 /*-- tablet --*/
@@ -755,6 +777,10 @@ input[type="submit"]:hover {
     content: "";
     display: block;
     clear: both;
+  }
+
+  .article-list h2 {
+    font-size: 1.2em;
   }
 
   .article-list {
@@ -768,6 +794,12 @@ input[type="submit"]:hover {
     height: 180px;
     object-fit: cover;
   }
+
+  .article-list .article-date, .article-list .article-category {
+    font-size: 0.85em;
+    opacity: 0.8;
+  }
+
 
   .footer-widget {
     width: 100%;
@@ -790,7 +822,7 @@ input[type="submit"]:hover {
   }
 
   .link-container {
-    font-size: 90%;
+    font-size: 80%;
   }
 
 }
