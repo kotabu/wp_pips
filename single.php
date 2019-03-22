@@ -26,6 +26,7 @@
         <h1><?php the_title(); ?></h1>
         <?php the_content(); ?>
       </article>
+      <?php comments_template(); ?>
       <div class="link-container">
         <span class="prev-link">
           <?php previous_post_link('%link'); ?>
@@ -37,4 +38,5 @@
     <?php endif; ?>
   </div>
 </div>
+<?php get_template_part( 'under-contents' ); ?>
 <?php get_footer(); ?>

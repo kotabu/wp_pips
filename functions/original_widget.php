@@ -14,11 +14,12 @@ class ProfileWidgetItem extends WP_widget {
     $dest_title = !empty($instance['setting_title']) ? $instance['setting_title'] : "";
     $dest_url = !empty($instance['setting_url']) ? $instance['setting_url'] : "";
     $dest_img = !empty($instance['setting_img']) ? $instance['setting_img'] : "";
+    $dest_name = !empty($instance['setting_name']) ? $instance['setting_name'] : "";
     $dest_textarea = !empty($instance['setting_textarea']) ? $instance['setting_textarea'] : "";
 
     echo '<div id="profile-widget">'.$args['before_widget'];
     echo $args['before_title'].$dest_title.$args['after_title'];
-    echo '<a href="'.$dest_url.'"><img src="'.$dest_img.'" align="middle"/></a><p>'.$dest_textarea.'</p>';
+    echo '<a href="'.$dest_url.'"><img src="'.$dest_img.'" align="middle"/></a><p class="name">'.$dest_name.'</p><p>'.$dest_textarea.'</p>';
     echo $args['after_widget'].'</div>';
 
   }
@@ -28,6 +29,7 @@ class ProfileWidgetItem extends WP_widget {
     $dest_title = !empty($instance['setting_title']) ? $instance['setting_title'] : "";
     $dest_url = !empty($instance['setting_url']) ? $instance['setting_url'] : "";
     $dest_img = !empty($instance['setting_img']) ? $instance['setting_img'] : "";
+    $dest_name = !empty($instance['setting_name']) ? $instance['setting_name'] : "";
     $dest_textarea = !empty($instance['setting_textarea']) ? $instance['setting_textarea'] : "";
 ?>
     <p>
@@ -108,6 +110,10 @@ class ProfileWidgetItem extends WP_widget {
       });
     </script>
     <p>
+      <label for="<?php echo $this->get_field_id('setting_name'); ?>">名前</label><br>
+      <input id="<?php echo $this->get_field_id('setting_name'); ?>" name="<?php echo $this->get_field_name('setting_name'); ?>" type="text" value="<?php echo esc_attr($dest_name); ?>">
+    </p>
+    <p>
       <label for="<?php echo $this->get_field_id('setting_textarea'); ?>">テキスト</label><br>
       <textarea id="<?php echo $this->get_field_id('setting_textarea'); ?>" name="<?php echo $this->get_field_name('setting_textarea'); ?>" type="text"><?php echo $dest_textarea; ?></textarea>
     </p>
@@ -122,6 +128,7 @@ class ProfileWidgetItem extends WP_widget {
     $instance['setting_title'] = !empty($new_instance['setting_title']) ? $new_instance['setting_title'] : "";
     $instance['setting_url'] = !empty($new_instance['setting_url']) ? $new_instance['setting_url'] : "";
     $instance['setting_img'] = !empty($new_instance['setting_img']) ? $new_instance['setting_img'] : "";
+    $instance['setting_name'] = !empty($new_instance['setting_name']) ? $new_instance['setting_name'] : "";
     $instance['setting_textarea'] = !empty($new_instance['setting_textarea']) ? $new_instance['setting_textarea'] : "";
 
     return $instance;
