@@ -6,10 +6,11 @@
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <?php get_template_part( 'meta' ); ?>
+  <?php get_template_part( 'display_font' ); ?>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
+<header class="header_color">
   <div class="header-inner">
     <div class="site-title">
       <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
