@@ -11,7 +11,7 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="header_color">
-  <div class="header-inner">
+  <div class="header-inner" ontouchstart="">
     <div class="site-title">
       <?php if( get_option( 'title-img' ) ): ?>
       <h1><img src="<?php echo get_option( 'title-img' ); ?>" alt="title-img"/></h1>
