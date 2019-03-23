@@ -13,6 +13,9 @@ function view_setting_customize_resister($wp_customize) {
   $wp_customize->add_setting( 'popular-toggle' , array(
     'type' => 'option',
   ) );
+  $wp_customize->add_setting( 'sns-button' , array(
+    'type' => 'option',
+  ) );
 
   $wp_customize->add_control( 'popular-toggle', array(
     'settings' => 'popular-toggle',
@@ -27,6 +30,16 @@ if( class_exists('WP_Customize_Image_Control') ):
     'section' => 'view-setting',
   ) ));
 endif;
+ $wp_customize->add_control ( 'sns-button' , array(
+    'settings' => 'sns-button',
+    'label' => 'フォントの太さの設定',
+    'section' => 'view-setting',
+    'type' => 'radio',
+    'choices' => array(
+      'Default' => 'デフォルト',
+      'type1' => 'タイプ1',
+    ),
+  ) );
 }
 add_action( 'customize_register' , 'view_setting_customize_resister' );
 
