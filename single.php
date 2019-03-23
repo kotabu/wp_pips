@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="container">
-  <div class="contents">
+  <div class="contents" ontouchstart="">
     <?php if( have_posts() ): the_post();  ?>
       <article <?php post_class( 'article' ); ?>>
         <div class="article-info">
