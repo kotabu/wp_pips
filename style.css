@@ -572,7 +572,7 @@ input[type="submit"]:hover {
 
 .prev-link, .next-link {
   position: relative;
-  font-size: 1.7em;
+  font-size: 1.1em;
 }
 
 .prev-link {
@@ -584,8 +584,8 @@ input[type="submit"]:hover {
   content: "";
   position: absolute;
   background: url(images/chevron_left.svg) no-repeat;
-  top: 0.5em;
-  left: 0px;
+  top: 0.4em;
+  left: 0.4em;;
   width: 30px;
   height: 30px;
   transform: scale(1.5);
@@ -601,8 +601,8 @@ input[type="submit"]:hover {
   content: "";
   position: absolute;
   background: url(images/chevron_right.svg) no-repeat;
-  top: 0.82em;
-  right: -1em;
+  top: 0.7em;
+  right: -1.7em;
   width: 30px;
   height: 30px;
   transform: scale(1.5);
