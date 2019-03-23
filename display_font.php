@@ -1,4 +1,6 @@
-<?php if ( get_option( 'display-font' ) == 'Germania One' ):  
+<?php 
+$custom_display_font = 1;
+ if ( get_option( 'display-font' ) == 'Germania One' ):  
    $font_url = 'Germania+One'; 
    $font_name = 'Germania One'; 
  elseif ( get_option( 'display-font' ) == 'Roboto Mono' ): 
@@ -70,14 +72,17 @@
  elseif ( get_option( 'display-font' ) == 'Alfa Slab One' ): 
    $font_url = 'Alfa+Slab+One' ;
    $font_name = 'Alfa Slab One' ;
+ else:
+   $custom_display_font = 0;
  endif; ?>
-
+<?php if( $custom_display_font == 1 ): ?>
 <link href="https://fonts.googleapis.com/css?family=<?php echo $font_url ?>" rel="stylesheet">
 <style>
 .site-title, .description, .front-subtitle {
   font-family: '<?php echo $font_name ?>', cursive;
 }
 </style>
+<?php endif; ?>
 
 <?php
     $font = 'Regular';

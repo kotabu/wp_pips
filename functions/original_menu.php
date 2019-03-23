@@ -7,6 +7,9 @@ function view_setting_customize_resister($wp_customize) {
     'priority' => '10',
   ) );
 
+  $wp_customize->add_setting( 'title-img' , array(
+    'type' => 'option',
+  ) );
   $wp_customize->add_setting( 'popular-toggle' , array(
     'type' => 'option',
   ) );
@@ -17,6 +20,13 @@ function view_setting_customize_resister($wp_customize) {
     'section' => 'view-setting',
     'type' => 'checkbox',
     ));  
+if( class_exists('WP_Customize_Image_Control') ):
+  $wp_customize->add_control ( new WP_Customize_Image_Control( $wp_customize, 'title-img', array(
+    'settings' => 'title-img',
+    'label' => 'タイトル用の画像（設定しない場合はテキスト表示になります）',
+    'section' => 'view-setting',
+  ) ));
+endif;
 }
 add_action( 'customize_register' , 'view_setting_customize_resister' );
 

@@ -13,7 +13,11 @@
 <header class="header_color">
   <div class="header-inner">
     <div class="site-title">
+      <?php if( get_option( 'title-img' ) ): ?>
+      <h1><img src="<?php echo get_option( 'title-img' ); ?>" alt="title-img"/></h1>
+      <?php else: ?>
       <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+      <?php endif; ?>
     </div>
     <div class="description">
       <p><?php bloginfo('description'); ?></p>
