@@ -173,8 +173,18 @@ a:hover {
   display: inline-block;
 }
 
-/*-- search --*/
+/*-- under-sns --*/
 
+.under-sns-widget {
+  text-align: center;
+}
+
+.under-sns-wrapper {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+/*-- search --*/
 
 .searchbutton {
   position: absolute;

@@ -14,9 +14,17 @@ get_template_part('functions/view_count');
 
 function widgetarea_init() {
   register_sidebar(array( 
-    'name' => 'ページネーション下',
+    'name' => 'SNSボタン下',
+    'id' => 'under-sns',
+    'before_widget' => '<div id="%1$s" class="%2$s under-sns-wrapper">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="under-sns">',
+    'after_title' => '</h4>'
+  ) );
+  register_sidebar(array( 
+    'name' => 'フッター上',
     'id' => 'under-pagination',
-    'before_widget' => '<div id="%1$s" class="%2$s" footer-wrapper>',
+    'before_widget' => '<div id="%1$s" class="%2$s under-pagination-wrapper">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="under-pagination">',
     'after_title' => '</h4>'
@@ -24,7 +32,7 @@ function widgetarea_init() {
   register_sidebar(array( 
     'name' => 'フッター左側',
     'id' => 'footer-widget-left',
-    'before_widget' => '<div id="%1$s" class="%2$s" footer-wrapper>',
+    'before_widget' => '<div id="%1$s" class="%2$s footer-wrapper">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="footer-title">',
     'after_title' => '</h4>'
@@ -32,7 +40,7 @@ function widgetarea_init() {
   register_sidebar(array( 
     'name' => 'フッター中央',
     'id' => 'footer-widget-middle',
-    'before_widget' => '<div id="%1$s" class="%2$s" footer-wrapper>',
+    'before_widget' => '<div id="%1$s" class="%2$s footer-wrapper">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="footer-title">',
     'after_title' => '</h4>'
@@ -40,7 +48,7 @@ function widgetarea_init() {
   register_sidebar(array( 
     'name' => 'フッター右側',
     'id' => 'footer-widget-right',
-    'before_widget' => '<div id="%1$s" class="%2$s" footer-wrapper>',
+    'before_widget' => '<div id="%1$s" class="%2$s footer-wrapper">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="footer-title">',
     'after_title' => '</h4>'

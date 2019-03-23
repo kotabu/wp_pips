@@ -25,6 +25,9 @@
     <div class="header-button">
       <?php get_template_part( 'sns-button' ); ?>
     </div>
+    <div class="under-sns-widget">
+      <?php dynamic_sidebar( 'under-sns' ); ?>
+    </div>
     <div class="menubutton">
     <img class="menu-img" src="<?php echo get_template_directory_uri(); ?>/images/menu.svg">
       <?php wp_nav_menu(array(
