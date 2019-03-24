@@ -73,7 +73,6 @@ a:hover {
 
 .header-inner, .container, .footer-inner, .under-contents{
   margin: 0 auto;
-  padding: 10px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -107,8 +106,10 @@ a:hover {
 
 .site-title {
   font-size: 3em;
+  color: #333;
   line-height: 1.1;
-  margin: 100px 0px 50px 0px;
+  padding-top: 100px;
+  margin: 0px 0px 50px 0px;
   text-align: center;
 }
 
@@ -138,23 +139,6 @@ a:hover {
   text-align: center;
 }
 
-.sns-button img {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  filter: grayscale(100%);
-  transition: 0.3s all;
-}
-
-.sns-button img:hover {
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
-  -o-filter: grayscale(0%);
-  -ms-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-
 .header-button {
   max-width: 315px;
   display: block;
@@ -163,7 +147,7 @@ a:hover {
 
 .sns-button {
   display: inline-block;
-  margin: 0;
+  margin: 0 0 50px 0;
   padding: 0;
 }
 
@@ -330,6 +314,11 @@ a:hover {
 }
 
 /*-- index --*/
+
+.contents {
+  background-color: #fff;
+  padding: 20px 20px 50px 20px;
+}
 
 .contents>h1 {
   font-size: 3em;
@@ -655,7 +644,6 @@ input[type="submit"]:hover {
 /*-- under-contents --*/
 
 .under-contents {
-  margin-top: 50px;
   padding: 60px 0px;
   background-color: #e9e9e9;
   text-align: center;

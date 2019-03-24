@@ -16,6 +16,9 @@ function view_setting_customize_resister($wp_customize) {
   $wp_customize->add_setting( 'sns-button' , array(
     'type' => 'option',
   ) );
+  $wp_customize->add_setting( 'background-image' , array(
+    'type' => 'option',
+  ) );
 
   $wp_customize->add_control( 'popular-toggle', array(
     'settings' => 'popular-toggle',
@@ -38,10 +41,32 @@ endif;
     'choices' => array(
       'Default' => 'デフォルト',
       'type1' => 'タイプ1',
+      'type2' => 'タイプ2',
     ),
   ) );
+if( class_exists('WP_Customize_Image_Control') ):
+  $wp_customize->add_control ( new WP_Customize_Image_Control( $wp_customize, 'background-image', array(
+    'settings' => 'background-image',
+    'label' => '背景画像の設定',
+    'section' => 'view-setting',
+  ) ));
+endif;
 }
 add_action( 'customize_register' , 'view_setting_customize_resister' );
+
+
+if ( get_option( 'background-image') ) {
+  function theme_background_image(){
+    $background_image = get_option( 'background-image' );
+    ?>
+    <style>
+      body, .contents { background: url(<?php echo esc_html( $background_image ); ?>) repeat;}
+    </style>
+    <?php
+  }
+  add_action( 'wp_head', 'theme_background_image' );
+}
+
 
 function font_setting_customize_resister($wp_customize) {
   $wp_customize->add_section( 'font-setting', array(
@@ -150,6 +175,10 @@ function main_color_theme_customize_resister($wp_customize) {
     'default'    => '#333333',
     'sanitize_callback' => 'sanitize_hex_color',
   ) );
+  $wp_customize->add_setting( 'back_color' , array(
+    'default'    => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ) );
 
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_color', array(
       'label'      => __( 'ヘッダーカラーー', 'textdomain' ),
@@ -166,8 +195,14 @@ function main_color_theme_customize_resister($wp_customize) {
       'section'    => 'main_setting',
       'priority' => 10,
   )));
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'back_color', array(
+      'label'      => __( '背景カラー', 'textdomain' ),
+      'section'    => 'main_setting',
+      'priority' => 10,
+  )));
 }
 add_action( 'customize_register' , 'main_color_theme_customize_resister' );
+
 if ( get_theme_mod( 'main_color', 'default' ) !== 'default' ) {
   function theme_main_color(){
     $main_color = get_theme_mod( 'main_color' );
@@ -197,6 +232,17 @@ if ( get_theme_mod( 'title_color', 'default' ) !== 'default' ) {
     <?php
   }
   add_action( 'wp_head', 'theme_title_color' );
+}
+if ( get_theme_mod( 'back_color', 'default' ) !== 'default' ) {
+  function theme_background_color(){
+    $background_color = get_theme_mod( 'back_color' );
+    ?>
+    <style>
+      body { background-color: <?php echo esc_html( $background_color );?>; }
+    </style>
+    <?php
+  }
+  add_action( 'wp_head', 'theme_background_color' );
 }
 
 ?>
