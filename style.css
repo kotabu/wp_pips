@@ -573,7 +573,7 @@ input[type="submit"]:hover {
   position: absolute;
   background: url(images/chevron_left.svg) no-repeat;
   top: 0.4em;
-  left: 0.4em;;
+  left: 0.1em;;
   width: 30px;
   height: 30px;
   transform: scale(1.5);
@@ -589,7 +589,7 @@ input[type="submit"]:hover {
   content: "";
   position: absolute;
   background: url(images/chevron_right.svg) no-repeat;
-  top: 0.7em;
+  top: 0.75em;
   right: -1.7em;
   width: 30px;
   height: 30px;
