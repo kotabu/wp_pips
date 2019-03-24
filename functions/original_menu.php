@@ -35,7 +35,7 @@ if( class_exists('WP_Customize_Image_Control') ):
 endif;
  $wp_customize->add_control ( 'sns-button' , array(
     'settings' => 'sns-button',
-    'label' => 'フォントの太さの設定',
+    'label' => 'SNSボタンタイプの設定',
     'section' => 'view-setting',
     'type' => 'radio',
     'choices' => array(
